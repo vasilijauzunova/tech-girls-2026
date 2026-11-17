@@ -1,0 +1,37 @@
+{
+  "name": "Hero Code Day",
+  "image": "mcr.microsoft.com/devcontainers/java:1-21-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "21",
+      "installMaven": "true"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack"
+      ],
+      "settings": {
+        "java.configuration.updateBuildConfiguration": "automatic",
+        "java.test.config": {},
+        "editor.fontSize": 15,
+        "workbench.startupEditor": "readme",
+        "explorer.openEditors.visible": 0
+      }
+    },
+    "codespaces": {
+      "openFiles": [
+        "README.md"
+      ]
+    }
+  },
+  "forwardPorts": [8080],
+  "portsAttributes": {
+    "8080": {
+      "label": "Hero Code Day website",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "postCreateCommand": "mvn -q -DskipTests dependency:go-offline"
+}
