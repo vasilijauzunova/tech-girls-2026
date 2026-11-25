@@ -5,3 +5,11 @@ target/
 .idea/
 *.iml
 .DS_Store
+
+# Python end-to-end tests
+.venv/
+__pycache__/
+.pytest_cache/
+test-results/
+report.html
+e2e/assets/
